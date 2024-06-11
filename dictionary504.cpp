@@ -4,22 +4,22 @@
 #include <ctime>
 #include <algorithm>
 
-// ساختار درس
+
 struct Lesson {
     std::string name;
     std::vector<std::string> words;
-    std::vector<std::string> meanings; // اضافه کردن معنی لغات
+    std::vector<std::string> meanings; 
 };
 
 std::vector<Lesson> lessons;
 
-// تابع افزودن لغت به درس
+
 void addWordToLesson(int lessonIndex, const std::string& word, const std::string& meaning) {
     lessons[lessonIndex].words.push_back(word);
-    lessons[lessonIndex].meanings.push_back(meaning); // اضافه کردن معنی لغت
+    lessons[lessonIndex].meanings.push_back(meaning); 
 }
 
-// تابع نمایش معانی یک لغت
+
 void showWordMeaning(const std::string& word) {
     for (const auto& lesson : lessons) {
         for (size_t i = 0; i < lesson.words.size(); ++i) {
@@ -32,7 +32,7 @@ void showWordMeaning(const std::string& word) {
     std::cout << "the desired word was not found." << std::endl;
 }
 
-// تابع نمایش تمام لغات و معانی یک درس
+
 void showLessonWords(int lessonIndex) {
     std::cout << "lesson words" << lessons[lessonIndex].name << ":\n";
     for (size_t i = 0; i < lessons[lessonIndex].words.size(); ++i) {
@@ -40,7 +40,7 @@ void showLessonWords(int lessonIndex) {
     }
 }
 
-// تابع برگزاری امتحان
+
 void takeExam() {
     std::cout << "----- start the test -----\n";
     std::cout << "please select a lesson:\n";
@@ -51,7 +51,7 @@ void takeExam() {
     int selectedLessonIndex;
     std::cout << "enter the lesson number: ";
     std::cin >> selectedLessonIndex;
-    selectedLessonIndex--; // تبدیل شماره درس به ایندکس درس
+    selectedLessonIndex--; 
 
     if (selectedLessonIndex >= 0 && selectedLessonIndex < lessons.size()) {
         Lesson selectedLesson = lessons[selectedLessonIndex];
@@ -871,7 +871,7 @@ int main() {
 int selectedLessonIndex;
         std::cout << "enter the lesson number: ";
         std::cin >> selectedLessonIndex;
-        selectedLessonIndex--; // تبدیل شماره درس به ایندکس درس
+        selectedLessonIndex--; 
 
         if (selectedLessonIndex >= 0 && selectedLessonIndex < lessons.size()) {
             showLessonWords(selectedLessonIndex);
